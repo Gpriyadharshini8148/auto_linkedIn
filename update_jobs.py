@@ -1,9 +1,39 @@
 import json
 import os
 import sqlite3
+import time
 from server import search_linkedin_jobs
 
 DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "jobs.db")
+
+SEARCH_KEYWORDS = [
+    "Python Backend Developer",
+    "Backend Developer Python",
+    "Python Developer",
+    "Senior Python Developer",
+    "Junior Python Developer",
+    "Python Software Engineer",
+    "Backend Software Engineer Python",
+    "Python Engineer",
+    "Django Developer",
+    "Django Backend Developer",
+    "Flask Developer",
+    "Flask Backend Developer",
+    "FastAPI Developer",
+    "FastAPI Backend Developer",
+    "Python API Developer",
+    "REST API Developer Python",
+    "Python Microservices Developer",
+    "Backend Engineer Microservices",
+    "Python AWS Developer",
+    "Python Cloud Engineer",
+    "Python Kubernetes Developer",
+    "Python DevOps Developer",
+    "Entry Level Python Developer",
+    "Associate Software Engineer Python",
+    "Graduate Python Developer",
+    "Trainee Python Developer"
+]
 
 def init_db():
     conn = sqlite3.connect(DB_FILE)
@@ -209,33 +239,36 @@ def main():
     
     # Legacy migration block removed as migration is complete.
             
-    # Search with default parameters (Python Backend Developer, Bangalore & Chennai, internship & entry_level)
-    # We set a limit of 25 jobs per location.
-    try:
-        result_str = search_linkedin_jobs(limit_per_location=25)
-        result = json.loads(result_str)
-    except Exception as e:
-        print(f"Error executing scraper: {e}")
-        return
+    # Loop through all keywords to search LinkedIn
+    all_scraped_jobs = []
+    print(f"Scraping LinkedIn for {len(SEARCH_KEYWORDS)} different search terms...")
     
-    if not result.get("success"):
-        print("Scraping failed.")
-        return
+    for idx, keyword in enumerate(SEARCH_KEYWORDS, 1):
+        print(f"[{idx}/{len(SEARCH_KEYWORDS)}] Searching for: '{keyword}'...")
+        try:
+            # Fetch up to 5 jobs per location to keep runs fast, diverse, and rate-limit safe
+            result_str = search_linkedin_jobs(keywords=keyword, limit_per_location=5)
+            result = json.loads(result_str)
+            if result.get("success"):
+                scraped_jobs = result.get("jobs", [])
+                all_scraped_jobs.extend(scraped_jobs)
+                print(f"  -> Found {len(scraped_jobs)} potential fresher jobs.")
+            else:
+                print(f"  -> Scraping failed for '{keyword}': {result.get('message')}")
+        except Exception as e:
+            print(f"  -> Error executing scraper for '{keyword}': {e}")
+            
+        time.sleep(1.0)
         
-    new_jobs = result.get("jobs", [])
-    print(f"Scraped {len(new_jobs)} jobs.")
+    print(f"Total potential fresher jobs scraped: {len(all_scraped_jobs)}")
     
     try:
-        new_added, total = save_jobs_to_db(new_jobs)
+        new_added, total = save_jobs_to_db(all_scraped_jobs)
         print(f"Saved to DB: {new_added} new jobs added. Total jobs in DB: {total}")
         
         # If new jobs are successfully added, auto-push static jobs.json to GitHub
         if new_added > 0:
             git_push_changes()
-        else:
-            # We can still push to ensure sync if we want, or skip. Let's push to keep it updated.
-            # But skipping keeps GitHub build minutes clean if nothing changes.
-            pass
     except Exception as e:
         print(f"Error saving jobs to database: {e}")
 
