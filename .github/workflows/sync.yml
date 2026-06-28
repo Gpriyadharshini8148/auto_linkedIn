@@ -1,0 +1,45 @@
+name: Sync LinkedIn Jobs
+
+on:
+  schedule:
+    # Run daily at 3:30 AM UTC (9:00 AM IST)
+    - cron: '30 3 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  scrape-and-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/abstract-python@v2 # Fallback or use standard actions/setup-python
+      with:
+        python-version: '3.12'
+
+    # Alternate setup-python action
+    - name: Set up Python standard
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Scraper
+      run: |
+        # We run server.py once in import check to make sure it loads,
+        # then run update_jobs.py to scrape and update the jobs.json file.
+        python update_jobs.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "actions@github.com"
+        git add jobs.json jobs.db jobs.json.bak || true
+        git commit -m "sync latest job listings [skip ci]" || echo "No changes to commit"
+        git push

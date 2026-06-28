@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Jobs Dashboard | Fresher Developer Openings</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-logo">
+                <div class="logo-icon">
+                    <i data-lucide="briefcase"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>LinkedIn Job Finder</h1>
+                    <p>Python Backend Openings for Freshers</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span class="mcp-badge">
+                    <span class="pulse-indicator"></span>
+                    MCP Server Connected
+                </span>
+                <button id="btn-refresh" class="btn btn-primary">
+                    <i data-lucide="refresh-cw" class="icon-refresh"></i>
+                    <span>Refresh Listings</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon icon-total">
+                    <i data-lucide="database"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="stat-total">0</h3>
+                    <p>Total Persisted Jobs</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-blr">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="stat-bangalore">0</h3>
+                    <p>Bangalore Openings</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-maa">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="stat-chennai">0</h3>
+                    <p>Chennai Openings</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-time">
+                    <i data-lucide="calendar"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="stat-last-update">-</h3>
+                    <p>Last Sync Time</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter & Search Section -->
+        <section class="filter-section">
+            <div class="search-box">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search by job title or company name...">
+            </div>
+            <div class="filter-chips">
+                <button class="chip active" data-location="all">All Locations</button>
+                <button class="chip" data-location="Bangalore">Bangalore</button>
+                <button class="chip" data-location="Chennai">Chennai</button>
+            </div>
+        </section>
+
+        <!-- Date Range Filter Section -->
+        <section class="date-filter-section">
+            <div class="date-inputs">
+                <div class="date-input-group">
+                    <label for="start-date"><i data-lucide="calendar-days"></i> From Date</label>
+                    <input type="date" id="start-date">
+                </div>
+                <div class="date-input-group">
+                    <label for="end-date"><i data-lucide="calendar-days"></i> To Date</label>
+                    <input type="date" id="end-date">
+                </div>
+                <button id="btn-reset-dates" class="btn-reset">
+                    <i data-lucide="refresh-cw"></i> Reset Date
+                </button>
+            </div>
+        </section>
+
+        <!-- Jobs Grid -->
+        <main class="jobs-main">
+            <div class="jobs-grid-header">
+                <h2>Active Listings (<span id="jobs-count">0</span>)</h2>
+                <div class="view-options">
+                     <!-- Option to clear db or show info -->
+                </div>
+            </div>
+            
+            <div id="jobs-grid" class="jobs-grid">
+                <!-- Job Cards will be injected dynamically -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading job postings...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>&copy; 2026 LinkedIn MCP Jobs Dashboard. Engineered with SQLite & Python.</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript Controller -->
+    <script src="client.js"></script>
+</body>
+</html>
