@@ -47,6 +47,35 @@ def is_fresher_title(title: str) -> bool:
         
     return True
 
+def is_fresher_description(job_id: str, headers: Dict[str, str]) -> bool:
+    """
+    Fetches the job description using the LinkedIn seeMoreJobPostings detail endpoint
+    and verifies if it matches any experienced years requirements.
+    """
+    if not job_id:
+        return True
+    url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
+    try:
+        # Sleep for 1 second to avoid hitting rate limits
+        time.sleep(1.0)
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, "html.parser")
+            desc_div = soup.find(class_="show-more-less-html__markup")
+            if desc_div:
+                desc_text = desc_div.get_text(separator=" ", strip=True).lower()
+                
+                # Check for 2+ years of experience regex patterns
+                if re.search(r'\b([2-9]|\d{2,})\+?\s*(?:year|yr)s?\b', desc_text):
+                    logger.info(f"Skipping job ID {job_id} because description matches experienced years limit.")
+                    return False
+                if re.search(r'\b([2-9]|\d{2,})\s*(?:-|to)\s*\d+\s*(?:year|yr)s?\b', desc_text):
+                    logger.info(f"Skipping job ID {job_id} because description matches experienced years range.")
+                    return False
+    except Exception as e:
+        logger.error(f"Error fetching description for job {job_id}: {e}")
+    return True
+
 def scrape_jobs_for_location(
     keywords: str,
     location: str,
@@ -149,6 +178,11 @@ def scrape_jobs_for_location(
                         match = re.search(r'(\d+)$', last_part)
                         if match:
                             job_id = match.group(1)
+                
+                # Inspect job description for experience years limits
+                if job_id and not is_fresher_description(job_id, headers):
+                    logger.info(f"Skipping job: {title} at {company} (ID: {job_id}) due to experience requirements in description.")
+                    continue
                 
                 if title:
                     jobs.append({

@@ -108,6 +108,46 @@ async function fetchJobs() {
     }
 }
 
+// Calculate approximate calendar date from relative date strings (e.g. "2 days ago")
+function parseRelativeDate(dateStr, scrapedAtStr) {
+    if (!dateStr) return null;
+    
+    const baseDate = scrapedAtStr ? new Date(scrapedAtStr) : new Date();
+    const str = dateStr.trim().toLowerCase();
+    
+    if (str.includes("just now") || str.includes("today") || str.includes("now") || str.includes("hour")) {
+        return baseDate;
+    }
+    if (str.includes("yesterday")) {
+        const d = new Date(baseDate);
+        d.setDate(d.getDate() - 1);
+        return d;
+    }
+    
+    const match = str.match(/(\d+)\s*(day|week|month|year)s?\s*ago/);
+    if (match) {
+        const val = parseInt(match[1], 10);
+        const unit = match[2];
+        const d = new Date(baseDate);
+        
+        if (unit === "day") {
+            d.setDate(d.getDate() - val);
+        } else if (unit === "week") {
+            d.setDate(d.getDate() - (val * 7));
+        } else if (unit === "month") {
+            d.setMonth(d.getMonth() - val);
+        } else if (unit === "year") {
+            d.setFullYear(d.getFullYear() - val);
+        }
+        return d;
+    }
+    
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed.getTime())) return parsed;
+    
+    return baseDate;
+}
+
 // Render dynamic job cards
 function renderFilteredJobs() {
     const startDateVal = startDateInput.value;
@@ -123,20 +163,22 @@ function renderFilteredJobs() {
                              job.company.toLowerCase().includes(currentSearchQuery) ||
                              job.location.toLowerCase().includes(currentSearchQuery);
                              
-        // Filter by scraped_at date range
+        // Filter by LinkedIn Job Posted date range
         let matchesDate = true;
-        if (job.scraped_at) {
-            const scrapedDate = new Date(job.scraped_at);
-            if (startDateVal) {
-                const startLimit = new Date(startDateVal + 'T00:00:00');
-                if (scrapedDate < startLimit) matchesDate = false;
+        if (startDateVal || endDateVal) {
+            const postedDate = parseRelativeDate(job.date_posted, job.scraped_at);
+            if (postedDate) {
+                if (startDateVal) {
+                    const startLimit = new Date(startDateVal + 'T00:00:00');
+                    if (postedDate < startLimit) matchesDate = false;
+                }
+                if (endDateVal) {
+                    const endLimit = new Date(endDateVal + 'T23:59:59');
+                    if (postedDate > endLimit) matchesDate = false;
+                }
+            } else {
+                matchesDate = false;
             }
-            if (endDateVal) {
-                const endLimit = new Date(endDateVal + 'T23:59:59');
-                if (scrapedDate > endLimit) matchesDate = false;
-            }
-        } else if (startDateVal || endDateVal) {
-            matchesDate = false;
         }
                              
         return matchesLocation && matchesSearch && matchesDate;

@@ -20,6 +20,11 @@ def init_db():
             scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    # Add description_checked column if not exists
+    try:
+        cursor.execute("ALTER TABLE jobs ADD COLUMN description_checked INTEGER DEFAULT 0")
+    except sqlite3.OperationalError:
+        pass
     conn.commit()
     return conn
 
@@ -37,8 +42,8 @@ def save_jobs_to_db(jobs):
             job_id = hashlib.md5(key_source.encode('utf-8')).hexdigest()
             
         cursor.execute("""
-            INSERT OR IGNORE INTO jobs (job_id, title, company, location, link, date_posted, search_location)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            INSERT OR IGNORE INTO jobs (job_id, title, company, location, link, date_posted, search_location, description_checked)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             job_id,
             job.get("title"),
@@ -46,7 +51,8 @@ def save_jobs_to_db(jobs):
             job.get("location"),
             job.get("link"),
             job.get("date_posted"),
-            job.get("search_location")
+            job.get("search_location"),
+            job.get("description_checked", 1)
         ))
         
         if cursor.rowcount > 0:
@@ -87,14 +93,20 @@ def save_jobs_to_db(jobs):
 
 def cleanup_non_fresher_jobs():
     import re
+    import requests
+    from bs4 import BeautifulSoup
+    import time
+    
     exclude_keywords = [
         "senior", "sr", "sse", "lead", "principal", "manager", "architect", 
         "staff", "director", "head", "mid", "experienced", "intern",
         "founding", "ii", "iii", "iv", "expert", "specialist", "consultant"
     ]
     
-    conn = sqlite3.connect(DB_FILE)
+    conn = init_db()
     cursor = conn.cursor()
+    
+    # 1. Clean up jobs that fail basic title filters immediately
     cursor.execute("SELECT job_id, title FROM jobs")
     rows = cursor.fetchall()
     
@@ -102,24 +114,66 @@ def cleanup_non_fresher_jobs():
     for job_id, title in rows:
         title_lower = title.lower()
         words = re.findall(r'\b\w+\b', title_lower)
-        is_fresher = True
+        is_candidate = True
         for word in exclude_keywords:
             if word in words:
-                is_fresher = False
+                is_candidate = False
                 break
+        if is_candidate:
+            if re.search(r'\b([2-9]|\d{2,})\+?\s*(?:year|yr)s?\b', title_lower) or re.search(r'\b([2-9]|\d{2,})\s*-\s*\d+\s*(?:year|yr)s?\b', title_lower):
+                is_candidate = False
                 
-        if is_fresher:
-            if re.search(r'\b([2-9]|\d{2,})\+?\s*(?:year|yr)s?\b', title_lower):
-                is_fresher = False
-            elif re.search(r'\b([2-9]|\d{2,})\s*-\s*\d+\s*(?:year|yr)s?\b', title_lower):
-                is_fresher = False
-                
-        if not is_fresher:
+        if not is_candidate:
             cursor.execute("DELETE FROM jobs WHERE job_id = ?", (job_id,))
             deleted_count += 1
             
     conn.commit()
+    
+    # 2. Deep scan descriptions for remaining unchecked candidates
+    cursor.execute("SELECT job_id, title, company FROM jobs WHERE description_checked = 0")
+    unchecked_candidates = cursor.fetchall()
+    
+    if unchecked_candidates:
+        print(f"Deep scanning {len(unchecked_candidates)} job descriptions for experience requirements...")
+        
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    
+    for job_id, title, company in unchecked_candidates:
+        url = f"https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{job_id}"
+        is_fresher_desc = True
+        try:
+            time.sleep(1.0) # sleep 1s to prevent rate limits
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, "html.parser")
+                desc_div = soup.find(class_="show-more-less-html__markup")
+                if desc_div:
+                    desc_text = desc_div.get_text(separator=" ", strip=True).lower()
+                    
+                    # Regex check for 2+ years of experience
+                    if re.search(r'\b([2-9]|\d{2,})\+?\s*(?:year|yr)s?\b', desc_text) or re.search(r'\b([2-9]|\d{2,})\s*(?:-|to)\s*\d+\s*(?:year|yr)s?\b', desc_text):
+                        is_fresher_desc = False
+            elif response.status_code == 404:
+                # Job posting is gone, we can delete it or mark it checked. Let's delete it.
+                cursor.execute("DELETE FROM jobs WHERE job_id = ?", (job_id,))
+                deleted_count += 1
+                continue
+        except Exception as e:
+            # Leave description_checked as 0 to retry next time
+            continue
+            
+        if not is_fresher_desc:
+            cursor.execute("DELETE FROM jobs WHERE job_id = ?", (job_id,))
+            deleted_count += 1
+            print(f"Purged from DB (requires experience in description): '{title}' at '{company}'")
+        else:
+            cursor.execute("UPDATE jobs SET description_checked = 1 WHERE job_id = ?", (job_id,))
+            
+    conn.commit()
     conn.close()
+    
     if deleted_count > 0:
         print(f"Cleaned up database: removed {deleted_count} non-fresher jobs.")
 
@@ -153,19 +207,7 @@ def main():
     # Clean up any existing non-fresher jobs
     cleanup_non_fresher_jobs()
     
-    # Check if there is a legacy jobs.json to migrate
-    json_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "jobs.json")
-    if os.path.exists(json_file):
-        print(f"Found legacy {json_file}. Migrating to SQLite...")
-        try:
-            with open(json_file, "r", encoding="utf-8") as f:
-                legacy_jobs = json.load(f)
-            new_added, total = save_jobs_to_db(legacy_jobs)
-            print(f"Migrated {new_added} jobs to SQLite database.")
-            os.replace(json_file, json_file + ".bak")
-            print("Renamed jobs.json to jobs.json.bak")
-        except Exception as e:
-            print(f"Error during legacy migration: {e}")
+    # Legacy migration block removed as migration is complete.
             
     # Search with default parameters (Python Backend Developer, Bangalore & Chennai, internship & entry_level)
     # We set a limit of 25 jobs per location.
