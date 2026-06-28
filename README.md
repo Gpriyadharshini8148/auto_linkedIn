@@ -115,7 +115,7 @@ You can schedule the update script to run automatically every morning using Powe
 1. Open PowerShell and run:
    ```powershell
    $action = New-ScheduledTaskAction -Execute "C:\Program Files\Python312\python.exe" -Argument "d:\linked in mcp\update_jobs.py"
-   $trigger = New-ScheduledTaskTrigger -Daily -At 9:00AM
+   $trigger = New-ScheduledTaskTrigger -Daily -At 11:00AM
    Register-ScheduledTask -TaskName "LinkedInJobUpdater" -Action $action -Trigger $trigger -Description "Daily LinkedIn Job Updater for Python Backend Developer Freshers" -Force
    ```
 
