@@ -266,9 +266,9 @@ def main():
         new_added, total = save_jobs_to_db(all_scraped_jobs)
         print(f"Saved to DB: {new_added} new jobs added. Total jobs in DB: {total}")
         
-        # If new jobs are successfully added, auto-push static jobs.json to GitHub
-        if new_added > 0:
-            git_push_changes()
+        # Always push jobs.json to GitHub so Netlify live site stays up to date.
+        # Even if no new jobs were added, the file is pushed to keep the deploy fresh.
+        git_push_changes()
     except Exception as e:
         print(f"Error saving jobs to database: {e}")
 

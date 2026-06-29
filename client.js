@@ -262,7 +262,7 @@ function updateStats() {
 async function triggerUpdate() {
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (!isLocal) {
-        showToast("error", "Direct scraping is disabled in live demo. Please run updates locally.");
+        showToast("info", "✅ Jobs are auto-synced daily via GitHub Actions at 9:00 AM IST. Check back tomorrow for fresh listings!");
         return;
     }
     
