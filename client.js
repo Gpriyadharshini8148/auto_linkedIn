@@ -1,5 +1,6 @@
 // Application State
 let jobsList = [];
+let lastSyncedTime = null;
 let currentLocationFilter = 'all';
 let currentSearchQuery = '';
 
@@ -82,17 +83,26 @@ async function fetchJobs() {
         const data = await response.json();
         
         if (data.success !== undefined) {
+            // Local backend API response: { success, jobs }
             if (data.success) {
                 jobsList = data.jobs || [];
+                lastSyncedTime = null; // will compute from scraped_at
                 updateStats();
                 renderFilteredJobs();
             } else {
                 showEmptyState(data.message || "Failed to load listings");
                 showToast("error", "Error loading jobs: " + data.message);
             }
+        } else if (data.last_synced !== undefined) {
+            // Static jobs.json (new format): { last_synced, jobs }
+            jobsList = data.jobs || [];
+            lastSyncedTime = data.last_synced;
+            updateStats();
+            renderFilteredJobs();
         } else {
-            // Static jobs.json loaded directly (is an array of jobs)
-            jobsList = data || [];
+            // Static jobs.json (legacy format): plain array
+            jobsList = Array.isArray(data) ? data : [];
+            lastSyncedTime = null;
             updateStats();
             renderFilteredJobs();
         }
@@ -248,11 +258,18 @@ function updateStats() {
     statBangalore.textContent = blrCount;
     statChennai.textContent = maaCount;
     
-    // Get most recent scraped_at
-    if (jobsList.length > 0) {
+    // Use the top-level last_synced timestamp if available (most accurate)
+    // Otherwise fall back to the max scraped_at across all jobs
+    if (lastSyncedTime) {
+        // last_synced is stored in UTC — convert to local time for display
+        const syncDate = new Date(lastSyncedTime + ' UTC');
+        statLastUpdate.textContent = syncDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            + ' ' + syncDate.toLocaleDateString([], { month: 'short', day: 'numeric' });
+    } else if (jobsList.length > 0) {
         const dates = jobsList.map(j => new Date(j.scraped_at));
         const maxDate = new Date(Math.max.apply(null, dates));
-        statLastUpdate.textContent = maxDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' ' + maxDate.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        statLastUpdate.textContent = maxDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            + ' ' + maxDate.toLocaleDateString([], { month: 'short', day: 'numeric' });
     } else {
         statLastUpdate.textContent = '-';
     }

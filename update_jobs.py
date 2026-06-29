@@ -107,10 +107,16 @@ def save_jobs_to_db(jobs):
         for r in rows
     ]
     
+    from datetime import datetime, timezone
+    export_payload = {
+        "last_synced": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
+        "jobs": all_jobs
+    }
+    
     json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "jobs.json")
     try:
         with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(all_jobs, f, indent=2, ensure_ascii=False)
+            json.dump(export_payload, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"Error exporting static JSON file: {e}")
         
