@@ -13,14 +13,10 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/abstract-python@v2 # Fallback or use standard actions/setup-python
-      with:
-        python-version: '3.12'
-
-    # Alternate setup-python action
-    - name: Set up Python standard
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
@@ -31,15 +27,12 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Scraper
-      run: |
-        # We run server.py once in import check to make sure it loads,
-        # then run update_jobs.py to scrape and update the jobs.json file.
-        python update_jobs.py
+      run: python update_jobs.py
 
     - name: Commit and Push Changes
       run: |
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
-        git add jobs.json jobs.db jobs.json.bak || true
+        git add jobs.json jobs.db || true
         git commit -m "sync latest job listings [skip ci]" || echo "No changes to commit"
         git push
