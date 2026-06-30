@@ -59,9 +59,14 @@ class JobDashboardRequestHandler(http.server.SimpleHTTPRequestHandler):
             cursor.execute(sql_query, params)
             rows = cursor.fetchall()
             jobs = [dict(row) for row in rows]
+            
+            # Fetch the latest sync time from the entire jobs table
+            cursor.execute("SELECT MAX(scraped_at) FROM jobs")
+            last_synced_row = cursor.fetchone()
+            last_synced = last_synced_row[0] if last_synced_row else None
             conn.close()
             
-            self.send_response_json({"success": True, "count": len(jobs), "jobs": jobs})
+            self.send_response_json({"success": True, "count": len(jobs), "last_synced": last_synced, "jobs": jobs})
         except Exception as e:
             self.send_response_json({"success": False, "message": str(e)}, status=500)
             

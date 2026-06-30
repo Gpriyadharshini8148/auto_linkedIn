@@ -83,10 +83,10 @@ async function fetchJobs() {
         const data = await response.json();
         
         if (data.success !== undefined) {
-            // Local backend API response: { success, jobs }
+            // Local backend API response: { success, last_synced, jobs }
             if (data.success) {
                 jobsList = data.jobs || [];
-                lastSyncedTime = null; // will compute from scraped_at
+                lastSyncedTime = data.last_synced || null; // use backend-provided sync time
                 updateStats();
                 renderFilteredJobs();
             } else {
