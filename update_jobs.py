@@ -109,7 +109,7 @@ def save_jobs_to_db(jobs):
     
     from datetime import datetime, timezone
     export_payload = {
-        "last_synced": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
+        "last_synced": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "jobs": all_jobs
     }
     

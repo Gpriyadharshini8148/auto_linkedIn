@@ -261,10 +261,15 @@ function updateStats() {
     // Use the top-level last_synced timestamp if available (most accurate)
     // Otherwise fall back to the max scraped_at across all jobs
     if (lastSyncedTime) {
-        // last_synced is stored in UTC — convert to local time for display
-        const syncDate = new Date(lastSyncedTime + ' UTC');
-        statLastUpdate.textContent = syncDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            + ' ' + syncDate.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        // Normalize to ISO 8601 (replace space with T, add Z) for cross-browser safety
+        const isoStr = lastSyncedTime.trim().replace(' ', 'T').replace(/Z?$/, 'Z');
+        const syncDate = new Date(isoStr);
+        if (!isNaN(syncDate.getTime())) {
+            statLastUpdate.textContent = syncDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                + ' ' + syncDate.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        } else {
+            statLastUpdate.textContent = lastSyncedTime; // fallback: show raw string
+        }
     } else if (jobsList.length > 0) {
         const dates = jobsList.map(j => new Date(j.scraped_at));
         const maxDate = new Date(Math.max.apply(null, dates));
