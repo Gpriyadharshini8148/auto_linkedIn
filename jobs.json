@@ -1,35 +1,25 @@
 {
-  "last_synced": "2026-11-03T11:24:58Z",
+  "last_synced": "2026-11-04T11:33:50Z",
   "jobs": [
     {
-      "job_id": "4484770473",
-      "title": "Trendlyne - Backend Engineer - Python",
-      "company": "Trendlyne.com",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/trendlyne-backend-engineer-python-at-trendlyne-com-4484770473",
-      "date_posted": "5 days ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481672091",
+      "job_id": "4481656861",
       "title": "Python Developer",
       "company": "Viraaj HR Solutions Private Limited",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/python-developer-at-viraaj-hr-solutions-private-limited-4481672091",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/python-developer-at-viraaj-hr-solutions-private-limited-4481656861",
       "date_posted": "1 week ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4486033090",
-      "title": "Backend Developer - Python",
-      "company": "Deservely Technologies",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-developer-python-at-deservely-technologies-4486033090",
-      "date_posted": "4 hours ago",
+      "job_id": "4468058393",
+      "title": "Python Developer",
+      "company": "Infosys",
+      "location": "Bengaluru East, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-developer-at-infosys-4468058393",
+      "date_posted": "2 days ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4454582094",
@@ -39,27 +29,17 @@
       "link": "https://in.linkedin.com/jobs/view/z2-python-developer-at-ntt-data-north-america-4454582094",
       "date_posted": "2 weeks ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4439046037",
-      "title": "Software Engineer - Backend",
-      "company": "Uplabh",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/software-engineer-backend-at-uplabh-4439046037",
-      "date_posted": "3 months ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481656861",
+      "job_id": "4481672091",
       "title": "Python Developer",
       "company": "Viraaj HR Solutions Private Limited",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/python-developer-at-viraaj-hr-solutions-private-limited-4481656861",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-developer-at-viraaj-hr-solutions-private-limited-4481672091",
       "date_posted": "1 week ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4306129257",
@@ -69,37 +49,17 @@
       "link": "https://in.linkedin.com/jobs/view/python-developer-at-91social-4306129257",
       "date_posted": "1 year ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4476204074",
-      "title": "Python Software Engineer",
-      "company": "Glencore",
+      "job_id": "4486338137",
+      "title": "Python Fullstack Developer",
+      "company": "Talentgigs",
       "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/python-software-engineer-at-glencore-4476204074",
-      "date_posted": "4 days ago",
+      "link": "https://in.linkedin.com/jobs/view/python-fullstack-developer-at-talentgigs-4486338137",
+      "date_posted": "7 hours ago",
       "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4474128596",
-      "title": "Junior Developer - AI",
-      "company": "Larsen & Toubro",
-      "location": "Greater Chennai Area",
-      "link": "https://in.linkedin.com/jobs/view/junior-developer-ai-at-larsen-toubro-4474128596",
-      "date_posted": "3 weeks ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4484304648",
-      "title": "Associate Software Engineer",
-      "company": "Miamin Systems",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-miamin-systems-4484304648",
-      "date_posted": "1 day ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4448964706",
@@ -109,297 +69,27 @@
       "link": "https://in.linkedin.com/jobs/view/backend-engineer-python-at-bahwan-cybertek-4448964706",
       "date_posted": "3 months ago",
       "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4474851008",
-      "title": "Associate Engineer - AI services",
-      "company": "NTT DATA, Inc.",
+      "job_id": "4486834688",
+      "title": "Python Backend Developer",
+      "company": "Kinaxis",
       "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/associate-engineer-ai-services-at-ntt-data-inc-4474851008",
-      "date_posted": "4 days ago",
+      "link": "https://in.linkedin.com/jobs/view/python-backend-developer-at-kinaxis-4486834688",
+      "date_posted": "1 day ago",
       "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4480487488",
-      "title": "Reactivate Your Career Program – Python Developer",
-      "company": "Citi",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/reactivate-your-career-program%E2%80%AF%E2%80%93-python-developer-at-citi-4480487488",
-      "date_posted": "1 week ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4448817577",
-      "title": "Backend Engineer (Python)",
-      "company": "Bahwan CyberTek",
+      "job_id": "4474128596",
+      "title": "Junior Developer - AI",
+      "company": "Larsen & Toubro",
       "location": "Greater Chennai Area",
-      "link": "https://in.linkedin.com/jobs/view/backend-engineer-python-at-bahwan-cybertek-4448817577",
-      "date_posted": "3 months ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4460335149",
-      "title": "Python Django Developer",
-      "company": "Kumaran Systems",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/python-django-developer-at-kumaran-systems-4460335149",
-      "date_posted": "2 days ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4483064020",
-      "title": "Full-stack Engineer",
-      "company": "Mako IT Lab",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/full-stack-engineer-at-mako-it-lab-4483064020",
-      "date_posted": "4 days ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4306132116",
-      "title": "Python /Django Developer",
-      "company": "Levelup11",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/python-django-developer-at-levelup11-4306132116",
-      "date_posted": "1 year ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4276256807",
-      "title": "Python Developer",
-      "company": "Deqode",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/python-developer-at-deqode-4276256807",
-      "date_posted": "1 year ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4484434677",
-      "title": "AI Application Developer",
-      "company": "Foodhub",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/ai-application-developer-at-foodhub-4484434677",
-      "date_posted": "6 days ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4460541877",
-      "title": "Backend Developer",
-      "company": "ALTEN India",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-developer-at-alten-india-4460541877",
-      "date_posted": "2 months ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4306125300",
-      "title": "Python",
-      "company": "Detect Technologies",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/python-at-detect-technologies-4306125300",
-      "date_posted": "1 year ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4486032127",
-      "title": "Backend Developer - Java",
-      "company": "Deservely Technologies",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-developer-java-at-deservely-technologies-4486032127",
-      "date_posted": "5 hours ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481320171",
-      "title": "Java Backend Developer",
-      "company": "Viraaj HR Solutions Private Limited",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/java-backend-developer-at-viraaj-hr-solutions-private-limited-4481320171",
-      "date_posted": "1 week ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4473860521",
-      "title": "Java Springboot Developer",
-      "company": "Infosys",
-      "location": "Bengaluru East, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/java-springboot-developer-at-infosys-4473860521",
-      "date_posted": "1 week ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4474146384",
-      "title": "Backend Developer",
-      "company": "Comviva",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-developer-at-comviva-4474146384",
-      "date_posted": "1 month ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4484054458",
-      "title": "Backend Engineer (Java & Springboot)",
-      "company": "Uplers",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-engineer-java-springboot-at-uplers-4484054458",
-      "date_posted": "6 days ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4354200026",
-      "title": "SDE-JAVA - BACKEND - API Integration",
-      "company": "Hiret Consulting",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/sde-java-backend-api-integration-at-hiret-consulting-4354200026",
-      "date_posted": "9 months ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481322077",
-      "title": "Java Backend Developer",
-      "company": "Viraaj HR Solutions Private Limited",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/java-backend-developer-at-viraaj-hr-solutions-private-limited-4481322077",
-      "date_posted": "1 week ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481699755",
-      "title": "Java Developer",
-      "company": "Citi",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/java-developer-at-citi-4481699755",
-      "date_posted": "1 week ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4462182937",
-      "title": "Python Backend Engineer (AWS Integration)",
-      "company": "UsefulBI Corporation",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/python-backend-engineer-aws-integration-at-usefulbi-corporation-4462182937",
-      "date_posted": "2 months ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4478536884",
-      "title": "Custom Software Engineer",
-      "company": "Accenture in India",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4478536884",
-      "date_posted": "2 weeks ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4469450620",
-      "title": "Gen AI Developer",
-      "company": "Infosys",
-      "location": "Bengaluru East, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/gen-ai-developer-at-infosys-4469450620",
-      "date_posted": "2 weeks ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4483591415",
-      "title": "Custom Software Engineer Copy 01",
-      "company": "Accenture in India",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/custom-software-engineer-copy-01-at-accenture-in-india-4483591415",
-      "date_posted": "1 week ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4485946007",
-      "title": "Python Full Stack Developer Jobs in Chennai | LetzBizz",
-      "company": "LetzBizz",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/python-full-stack-developer-jobs-in-chennai-letzbizz-at-letzbizz-4485946007",
-      "date_posted": "2 days ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4417747246",
-      "title": "AI Software Engineer (DevOps) - Bangalore, India",
-      "company": "Zimperium",
-      "location": "Bengaluru East, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/ai-software-engineer-devops-bangalore-india-at-zimperium-4417747246",
-      "date_posted": "5 months ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4465510919",
-      "title": "DevOps Automation Engineer-Python Scripting",
-      "company": "ITC Infotech",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/devops-automation-engineer-python-scripting-at-itc-infotech-4465510919",
-      "date_posted": "6 days ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4481349890",
-      "title": "Platform Engineer – Enterprise Golden Paths & Automated Governance",
-      "company": "AstraZeneca",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/platform-engineer-%E2%80%93-enterprise-golden-paths-automated-governance-at-astrazeneca-4481349890",
-      "date_posted": "1 week ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4485352158",
-      "title": "Software Engineer - AI Platform",
-      "company": "DHL",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/software-engineer-ai-platform-at-dhl-4485352158",
-      "date_posted": "3 days ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4474013002",
-      "title": "MLOps",
-      "company": "Valeo",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/mlops-at-valeo-4474013002",
+      "link": "https://in.linkedin.com/jobs/view/junior-developer-ai-at-larsen-toubro-4474128596",
       "date_posted": "4 weeks ago",
       "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4478156714",
-      "title": "Jr Customer Service Executive - Platform Planning & Network Design",
-      "company": "Tata Communications",
-      "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/jr-customer-service-executive-platform-planning-network-design-at-tata-communications-4478156714",
-      "date_posted": "2 weeks ago",
-      "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4466379738",
@@ -409,7 +99,17 @@
       "link": "https://in.linkedin.com/jobs/view/ai-ml-computational-science-associate-at-accenture-in-india-4466379738",
       "date_posted": "1 week ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4486353081",
+      "title": "Python Developer",
+      "company": "Best NanoTech",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-developer-at-best-nanotech-4486353081",
+      "date_posted": "4 hours ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4485643271",
@@ -417,69 +117,219 @@
       "company": "Rippling",
       "location": "Bengaluru, Karnataka, India",
       "link": "https://in.linkedin.com/jobs/view/software-engineer-i-fullstack-at-rippling-4485643271",
-      "date_posted": "3 days ago",
+      "date_posted": "4 days ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4480039063",
-      "title": "Full Stack Python - Associate",
-      "company": "PwC Acceleration Center India",
-      "location": "Bengaluru East, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/full-stack-python-associate-at-pwc-acceleration-center-india-4480039063",
-      "date_posted": "1 week ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4484314220",
+      "job_id": "4485051804",
       "title": "Associate Software Engineer",
       "company": "TalentRabbit",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-talentrabbit-4484314220",
-      "date_posted": "1 day ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4486834688",
-      "title": "Python Backend Developer",
-      "company": "Kinaxis",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/python-backend-developer-at-kinaxis-4486834688",
-      "date_posted": "1 hour ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
-    },
-    {
-      "job_id": "4483210600",
-      "title": "Site Reliablity Engineer",
-      "company": "Trimble Inc.",
       "location": "Chennai, Tamil Nadu, India",
-      "link": "https://in.linkedin.com/jobs/view/site-reliablity-engineer-at-trimble-inc-4483210600",
+      "link": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-talentrabbit-4485051804",
+      "date_posted": "5 hours ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4485060299",
+      "title": "Associate Software Engineer",
+      "company": "Miamin Systems",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-miamin-systems-4485060299",
+      "date_posted": "6 hours ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4306132116",
+      "title": "Python /Django Developer",
+      "company": "Levelup11",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-django-developer-at-levelup11-4306132116",
+      "date_posted": "1 year ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4276256807",
+      "title": "Python Developer",
+      "company": "Deqode",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-developer-at-deqode-4276256807",
+      "date_posted": "1 year ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4439046037",
+      "title": "Software Engineer - Backend",
+      "company": "Uplabh",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/software-engineer-backend-at-uplabh-4439046037",
+      "date_posted": "3 months ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4484434677",
+      "title": "AI Application Developer",
+      "company": "Foodhub",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/ai-application-developer-at-foodhub-4484434677",
       "date_posted": "1 week ago",
       "search_location": "Chennai",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4477588841",
-      "title": "Backend Engineer",
-      "company": "Auric AI Labs",
-      "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/backend-engineer-at-auric-ai-labs-4477588841",
-      "date_posted": "3 weeks ago",
-      "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "job_id": "4460541877",
+      "title": "Backend Developer",
+      "company": "ALTEN India",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/backend-developer-at-alten-india-4460541877",
+      "date_posted": "2 months ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4405347076",
-      "title": "Data Engineer",
-      "company": "Fogwing® Operations Management Platform",
+      "job_id": "4306125300",
+      "title": "Python",
+      "company": "Detect Technologies",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/python-at-detect-technologies-4306125300",
+      "date_posted": "1 year ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4481320171",
+      "title": "Java Backend Developer",
+      "company": "Viraaj HR Solutions Private Limited",
       "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/data-engineer-at-fogwing%C2%AE-operations-management-platform-4405347076",
-      "date_posted": "6 months ago",
+      "link": "https://in.linkedin.com/jobs/view/java-backend-developer-at-viraaj-hr-solutions-private-limited-4481320171",
+      "date_posted": "1 week ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4473860521",
+      "title": "Java Springboot Developer",
+      "company": "Infosys",
+      "location": "Bengaluru East, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/java-springboot-developer-at-infosys-4473860521",
+      "date_posted": "1 week ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4474146384",
+      "title": "Backend Developer",
+      "company": "Comviva",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/backend-developer-at-comviva-4474146384",
+      "date_posted": "1 month ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4354200026",
+      "title": "SDE-JAVA - BACKEND - API Integration",
+      "company": "Hiret Consulting",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/sde-java-backend-api-integration-at-hiret-consulting-4354200026",
+      "date_posted": "9 months ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4481322077",
+      "title": "Java Backend Developer",
+      "company": "Viraaj HR Solutions Private Limited",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/java-backend-developer-at-viraaj-hr-solutions-private-limited-4481322077",
+      "date_posted": "1 week ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4481699755",
+      "title": "Java Developer",
+      "company": "Citi",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/java-developer-at-citi-4481699755",
+      "date_posted": "1 week ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4448817577",
+      "title": "Backend Engineer (Python)",
+      "company": "Bahwan CyberTek",
+      "location": "Greater Chennai Area",
+      "link": "https://in.linkedin.com/jobs/view/backend-engineer-python-at-bahwan-cybertek-4448817577",
+      "date_posted": "3 months ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4487016117",
+      "title": "Software Engineer",
+      "company": "NatWest Group",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/software-engineer-at-natwest-group-4487016117",
+      "date_posted": "18 hours ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4483379113",
+      "title": "Artificial Intelligence Engineer",
+      "company": "HTC Global Services",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/artificial-intelligence-engineer-at-htc-global-services-4483379113",
+      "date_posted": "1 week ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4417747246",
+      "title": "AI Software Engineer (DevOps) - Bangalore, India",
+      "company": "Zimperium",
+      "location": "Bengaluru East, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/ai-software-engineer-devops-bangalore-india-at-zimperium-4417747246",
+      "date_posted": "5 months ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4469450620",
+      "title": "Gen AI Developer",
+      "company": "Infosys",
+      "location": "Bengaluru East, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/gen-ai-developer-at-infosys-4469450620",
+      "date_posted": "2 weeks ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4485352158",
+      "title": "Software Engineer - AI Platform",
+      "company": "DHL",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/software-engineer-ai-platform-at-dhl-4485352158",
+      "date_posted": "4 days ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4465510919",
+      "title": "DevOps Automation Engineer-Python Scripting",
+      "company": "ITC Infotech",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/devops-automation-engineer-python-scripting-at-itc-infotech-4465510919",
+      "date_posted": "1 week ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
       "job_id": "4466367627",
@@ -489,17 +339,67 @@
       "link": "https://in.linkedin.com/jobs/view/ai-ml-computational-science-associate-at-accenture-in-india-4466367627",
       "date_posted": "1 week ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
     },
     {
-      "job_id": "4486148543",
-      "title": "Associate Business Intelligence Analyst",
-      "company": "Collins Aerospace",
+      "job_id": "4486348390",
+      "title": "Generative AI Engineer",
+      "company": "Evnek",
       "location": "Bengaluru, Karnataka, India",
-      "link": "https://in.linkedin.com/jobs/view/associate-business-intelligence-analyst-at-collins-aerospace-4486148543",
-      "date_posted": "23 hours ago",
+      "link": "https://in.linkedin.com/jobs/view/generative-ai-engineer-at-evnek-4486348390",
+      "date_posted": "17 hours ago",
       "search_location": "Bangalore",
-      "scraped_at": "2026-11-03 11:24:58"
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4405347076",
+      "title": "Data Engineer",
+      "company": "Fogwing® Operations Management Platform",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/data-engineer-at-fogwing%C2%AE-operations-management-platform-4405347076",
+      "date_posted": "6 months ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4474851008",
+      "title": "Associate Engineer - AI services",
+      "company": "NTT DATA, Inc.",
+      "location": "Chennai, Tamil Nadu, India",
+      "link": "https://in.linkedin.com/jobs/view/associate-engineer-ai-services-at-ntt-data-inc-4474851008",
+      "date_posted": "5 days ago",
+      "search_location": "Chennai",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4484600426",
+      "title": "Python and AI/ML Developer",
+      "company": "Terralogic",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/python-and-ai-ml-developer-at-terralogic-4484600426",
+      "date_posted": "1 day ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4480039063",
+      "title": "Full Stack Python - Associate",
+      "company": "PwC Acceleration Center India",
+      "location": "Bengaluru East, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/full-stack-python-associate-at-pwc-acceleration-center-india-4480039063",
+      "date_posted": "1 week ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
+    },
+    {
+      "job_id": "4477588841",
+      "title": "Backend Engineer",
+      "company": "Auric AI Labs",
+      "location": "Bengaluru, Karnataka, India",
+      "link": "https://in.linkedin.com/jobs/view/backend-engineer-at-auric-ai-labs-4477588841",
+      "date_posted": "3 weeks ago",
+      "search_location": "Bangalore",
+      "scraped_at": "2026-11-04 11:33:50"
     }
   ]
 }
